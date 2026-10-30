@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d1c">
+<title>M87 Tournament</title>
+<style>
+:root{--bg:#080d1c;--panel:#111a30;--panel2:#172440;--blue:#28c7ff;--purple:#9b6cff;--muted:#9aabc9;--white:#f4f7ff;--green:#45e0a1}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0%,#22204d 0,#080d1c 42%);color:var(--white);font-family:Arial,"Noto Sans Bengali",sans-serif}
+.wrap{max-width:760px;margin:auto;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 22px}
+.brand{display:flex;align-items:center;gap:11px}.logo{width:45px;height:45px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--purple));display:grid;place-items:center;font-weight:900;color:#08101f;font-size:19px;box-shadow:0 0 24px #28c7ff55}
+h1{font-size:21px;margin:0}.sub{font-size:12px;color:var(--muted);margin-top:4px}.pill{border:1px solid #314568;border-radius:30px;padding:8px 11px;color:#b8dfff;font-size:12px}
+.hero{background:linear-gradient(120deg,#172b50,#272052);border:1px solid #344a75;border-radius:22px;padding:22px;position:relative;overflow:hidden}
+.hero:after{content:"M87";position:absolute;right:8px;bottom:-22px;font-size:90px;font-weight:900;color:#ffffff0b}
+.eyebrow{color:var(--blue);font-size:12px;font-weight:bold;letter-spacing:1.5px}.hero h2{font-size:27px;line-height:1.2;margin:10px 0}.hero p{color:#c3d0e8;line-height:1.55;font-size:14px;max-width:470px}
+.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:800;background:linear-gradient(90deg,var(--blue),#8d79ff);color:#071020;cursor:pointer}
+.section{display:flex;align-items:center;justify-content:space-between;margin:25px 0 12px}.section h3{margin:0;font-size:18px}.muted{color:var(--muted);font-size:12px}
+.tabs{display:flex;gap:8px;overflow:auto;margin:18px 0}.tab{white-space:nowrap;border:1px solid #2a3c5d;background:#101a2e;color:#c6d4ed;padding:9px 14px;border-radius:30px;cursor:pointer}.tab.active{background:#203d63;border-color:var(--blue);color:white}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid #2a3c5d;border-radius:17px;padding:15px}
+.cardtop{display:flex;justify-content:space-between;align-items:center;gap:8px}.tag{font-size:10px;color:var(--green);border:1px solid #27775c;padding:5px 8px;border-radius:20px}
+.card h4{font-size:16px;margin:13px 0 8px}.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin:7px 0}
+.card .btn{width:100%;margin-top:12px;padding:10px}.notice{margin-top:18px;padding:13px 15px;border-radius:13px;background:#1b2437;border:1px solid #3c4964;color:#cbd7ed;font-size:12px;line-height:1.5}
+.list{display:grid;gap:10px}.rowitem{display:flex;align-items:center;gap:12px;background:#101a2e;border:1px solid #273957;border-radius:14px;padding:13px}.ico{width:38px;height:38px;border-radius:11px;background:#263a61;display:grid;place-items:center;font-size:18px}.rowitem strong{display:block;font-size:14px}.rowitem small{color:var(--muted)}
+footer{text-align:center;color:#7082a4;font-size:11px;padding:28px 0 12px}
+.modal{display:none;position:fixed;inset:0;background:#000b;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.dialog{width:100%;max-width:420px;background:#111d34;border:1px solid #40577e;border-radius:18px;padding:20px}.dialog h3{margin-top:0}.dialog input{width:100%;padding:12px;margin:7px 0 13px;border-radius:10px;border:1px solid #354b70;background:#081326;color:white}.dialog .btn{width:100%}.close{float:right;background:none;border:0;color:white;font-size:22px}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.hero h2{font-size:24px}.wrap{padding:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="brand"><div class="logo">M87</div><div><h1>M87 Tournament</h1><div class="sub">PLAY • COMPETE • IMPROVE</div></div></div>
+ <span class="pill">বাংলাদেশ</span>
+</header>
+<section class="hero">
+ <div class="eyebrow">COMMUNITY GAMING ARENA</div>
+ <h2>তোমার স্কিল দেখাও,<br>টিম নিয়ে খেলো!</h2>
+ <p>ফ্রি কমিউনিটি ম্যাচে অংশ নাও, নিজের টিম তৈরি করো এবং টুর্নামেন্টের আপডেট দেখো।</p>
+ <button class="btn" onclick="document.getElementById('events').scrollIntoView({behavior:'smooth'})">ইভেন্ট দেখো ↓</button>
+</section>
+<div class="tabs">
+ <button class="tab active" onclick="showTab('all',this)">সব ইভেন্ট</button>
+ <button class="tab" onclick="showTab('solo',this)">Solo</button>
+ <button class="tab" onclick="showTab('duo',this)">Duo</button>
+ <button class="tab" onclick="showTab('squad',this)">Squad</button>
+</div>
+<section id="events">
+ <div class="section"><h3>🔥 চলমান ও আসন্ন ইভেন্ট</h3><span class="muted">ডেমো ইভেন্ট</span></div>
+ <div class="grid" id="eventGrid">
+  <article class="card" data-mode="solo"><div class="cardtop"><span class="tag">ফ্রি এন্ট্রি</span><span>🎯</span></div><h4>Solo Clash</h4><div class="meta"><span>মোড</span><b>Solo</b></div><div class="meta"><span>অংশগ্রহণকারী</span><b>সীমিত</b></div><div class="meta"><span>সময়</span><b>সন্ধ্যা ৭:০০</b></div><button class="btn" onclick="openJoin('Solo Clash')">রেজিস্টার</button></article>
+  <article class="card" data-mode="duo"><div class="cardtop"><span class="tag">ফ্রি এন্ট্রি</span><span>⚡</span></div><h4>Duo Battle</h4><div class="meta"><span>মোড</span><b>Duo</b></div><div class="meta"><span>টিম</span><b>২ জন</b></div><div class="meta"><span>সময়</span><b>রাত ৮:০০</b></div><button class="btn" onclick="openJoin('Duo Battle')">রেজিস্টার</button></article>
+  <article class="card" data-mode="squad"><div class="cardtop"><span class="tag">ফ্রি এন্ট্রি</span><span>🛡️</span></div><h4>Squad Showdown</h4><div class="meta"><span>মোড</span><b>Squad</b></div><div class="meta"><span>টিম</span><b>৪ জন</b></div><div class="meta"><span>সময়</span><b>রাত ৯:০০</b></div><button class="btn" onclick="openJoin('Squad Showdown')">রেজিস্টার</button></article>
+ <article class="card" data-mode="solo"><div class="cardtop"><span class="tag">ফ্রি এন্ট্রি</span><span>🏆</span></div><h4>Practice Room</h4><div class="meta"><span>মোড</span><b>Solo</b></div><div class="meta"><span>ধরন</span><b>প্র্যাকটিস</b></div><div class="meta"><span>সময়</span><b>বিকেল ৫:০০</b></div><button class="btn" onclick="openJoin('Practice Room')">রেজিস্টার</button></article>
+ </div>
+</section>
+<div class="section"><h3>📢 গুরুত্বপূর্ণ আপডেট</h3></div>
+<div class="list">
+ <div class="rowitem"><div class="ico">📅</div><div><strong>রেজিস্ট্রেশন আগে সম্পন্ন করো</strong><small>ইভেন্ট শুরুর আগে তোমার Player ID যাচাই করো।</small></div></div>
+ <div class="rowitem"><div class="ico">🤝</div><div><strong>Fair Play বজায় রাখো</strong><small>অন্য খেলোয়াড়দের সম্মান করো এবং নিয়ম মেনে খেলো।</small></div></div>
+ <div class="rowitem"><div class="ico">🔔</div><div><strong>Room details</strong><small>অনুমোদিত অংশগ্রহণকারীদের রুমের তথ্য আয়োজক জানাবে।</small></div></div>
+</div>
+<div class="notice">এটি একটি প্রাথমিক UI ডেমো। রেজিস্ট্রেশন এখানে শুধু নমুনা হিসেবে দেখানো হয়; তথ্য কোনো সার্ভারে জমা হয় না। কোনো টাকা জমা, entry fee বা cash-prize সুবিধা এতে নেই।</div>
+<footer>© 2026 M87 Tournament • Community gaming demo</footer>
+</div>
+<div class="modal" id="joinModal"><div class="dialog"><button class="close" onclick="closeJoin()">×</button><h3 id="modalTitle">ইভেন্ট রেজিস্ট্রেশন</h3><label>Player Name</label><input id="playerName" placeholder="তোমার নাম"><label>Player ID</label><input id="playerId" placeholder="তোমার গেম ID"><button class="btn" onclick="submitJoin()">ডেমো রেজিস্ট্রেশন</button><p class="muted" id="msg"></p></div></div>
+<script>
+let selectedEvent='';
+function showTab(mode,el){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));el.classList.add('active');document.querySelectorAll('#eventGrid .card').forEach(c=>c.style.display=(mode==='all'||c.dataset.mode===mode)?'block':'none')}
+function openJoin(name){selectedEvent=name;document.getElementById('modalTitle').textContent=name+' — রেজিস্ট্রেশন';document.getElementById('msg').textContent='';document.getElementById('joinModal').classList.add('show')}
+function closeJoin(){document.getElementById('joinModal').classList.remove('show')}
+function submitJoin(){let n=document.getElementById('playerName').value.trim(),p=document.getElementById('playerId').value.trim();if(!n||!p){document.getElementById('msg').textContent='নাম ও Player ID পূরণ করো।';return}document.getElementById('msg').textContent='ধন্যবাদ, '+n+'! এটি ডেমো রেজিস্ট্রেশন। আয়োজকের সঙ্গে যোগাযোগ করে অংশগ্রহণ নিশ্চিত করো।'}
+</script>
+</body>
+</html>
